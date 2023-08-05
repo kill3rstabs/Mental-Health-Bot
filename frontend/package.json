@@ -1,0 +1,11 @@
+{
+  "name": "mental-health-bot-frontend",
+  "version": "1.0.0",
+  "description": "This the frontend of the mental health chat bot created for United Hacks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ali Hassan Mughal",
+  "license": "ISC"
+}
