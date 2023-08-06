@@ -1,74 +1,33 @@
-import { Box, TextField, Typography } from "@mui/material";
-import { useState } from "react";
+import React, { useState } from "react";
+import Register from "./register";
+import Login from "./Login";
 
 export default function Account() {
-    const { input,setInput } = useState(false)
+  const [register, setRegister] = useState(false);
+  const [login, setLogin] = useState(false);
+  const [buttons, setButtons] = useState(true);
 
-    return (
-    <Box
-      sx={{
-        p: "40px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      <Typography>Enter the following information</Typography>
+  function handleRegister() {
+    setRegister(true);
+    setButtons(false);
+  }
 
-      <Typography>Age</Typography>
-      <TextField
-        label="Age"
-        variant="outlined"
-        placeholder="Enter your Age"
-        value={input.username}
-        // onChange={handleUsernameChange}
-      ></TextField>
+  function handleLogin() {
+    setLogin(true);
+    setButtons(false);
+  }
 
-      <Typography>Name</Typography>
-      <TextField
-        label="Name"
-        variant="outlined"
-        placeholder="Enter your Name"
-        //   value={username}
-        //   onChange={handleUsernameChange}
-      ></TextField>
 
-      <Typography>Email</Typography>
-      <TextField
-        label="Email"
-        variant="outlined"
-        placeholder="Enter your Email"
-        //   value={username}
-        //   onChange={handleUsernameChange}
-      ></TextField>
+  return (
+    <div>
+      {buttons && (
+        <div>
+          <button onClick={handleLogin}>Login</button> <button onClick={handleRegister}>Register</button>
+        </div>
+      )}
 
-      <Typography>Password</Typography>
-      <TextField
-        label="Name"
-        variant="outlined"
-        placeholder="Enter your Name"
-        //   value={username}
-        //   onChange={handleUsernameChange}
-      ></TextField>
-
-      <Typography>Employee Status</Typography>
-      <TextField
-        label="Name"
-        variant="outlined"
-        placeholder="Enter your Name"
-        //   value={username}
-        //   onChange={handleUsernameChange}
-      ></TextField>
-
-      <Typography>Relationship Status</Typography>
-      <TextField
-        label="Name"
-        variant="outlined"
-        placeholder="Enter your Name"
-        //   value={username}
-        //   onChange={handleUsernameChange}
-      ></TextField>
-    </Box>
+      {register && <Register />}
+      {login && <Login />}
+    </div>
   );
 }
