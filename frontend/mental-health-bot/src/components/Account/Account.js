@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Register from "./register";
-import Login from "./Login";
+import Login from "./login";
 
 export default function Account() {
   const [register, setRegister] = useState(false);
@@ -19,7 +19,7 @@ export default function Account() {
 
 
   return (
-    <div>
+    <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
       {buttons && (
         <div>
           <button onClick={handleLogin}>Login</button> <button onClick={handleRegister}>Register</button>
